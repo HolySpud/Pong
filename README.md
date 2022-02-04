@@ -2,4 +2,7 @@
 CS30 Pong Game
 
 Brainstorming Features
- - Increasing speeds
+ - Ramping speeds
+ - Custom score limits
+ - Custom controls?
+ - Blind mode
