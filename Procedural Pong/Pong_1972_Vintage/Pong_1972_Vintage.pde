@@ -1,5 +1,5 @@
 //Global Variables
-float xBall, yBall, ballDiameter;
+float xBall, yBall, ballDiameter, velBallX, velBallY;
 float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
 float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddle;
 float xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
@@ -16,7 +16,7 @@ void draw() {
   rect(0, 0, width, height);
   //Ball
   fill(255); 
-  ellipse(xBall, yBall, ballDiameter, ballDiameter);
+  ball();
   //Paddles (right, left)
   leftPaddle();
   rect(xRightPaddle, yRightPaddle, widthPaddle, heightPaddle);

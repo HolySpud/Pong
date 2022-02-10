@@ -29,5 +29,7 @@ void population() {
  
  
  //Velocity
- velPaddle = 10;
+ velPaddle = height/20;
+ velBallX = height/100;
+ velBallY = height/100;
 }//End Population
