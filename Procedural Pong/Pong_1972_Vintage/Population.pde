@@ -30,6 +30,14 @@ void population() {
  
  //Velocity
  velPaddle = height/20;
- velBallX = height/100;
- velBallY = height/100;
+ velBallX = int(random(-height/70, height/70));
+ while(velBallX == 0) {
+ velBallX = int(random(-height/70, height/70));
+ };
+ println(velBallX);
+ velBallY = int(random(-height/100, height/100));
+  while(velBallY == 0) {
+ velBallY = int(random(-height/100, height/100));
+ };
+ println(velBallY);
 }//End Population

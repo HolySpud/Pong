@@ -12,10 +12,7 @@ void ballMove() {
   if(xBall + ballDiameter/2>= width || xBall - ballDiameter/2 <= 0) {
   velBallX *= -1;
   }
-  //Paddle Bouncing
-  if(xBall - ballDiameter/2 < xLeftPaddle + widthPaddle) {
-   velBallX *= -1;
-  }
+  //
  xBall += velBallX;
  yBall += velBallY;
 }
