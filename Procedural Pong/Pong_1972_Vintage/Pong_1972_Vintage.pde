@@ -1,8 +1,3 @@
-//Global Variables
-float xBall, yBall, ballDiameter, velBallX, velBallY;
-float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
-float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddle;
-float xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
 
 void setup() {
  //size(displayHeight, displayHeight);
@@ -18,8 +13,8 @@ void draw() {
   fill(255); 
   ball();
   //Paddles (right, left)
-  leftPaddle();
-  rect(xRightPaddle, yRightPaddle, widthPaddle, heightPaddle);
+  leftPaddleDraw();
+  rightPaddleDraw();
   //Middle Net
   stroke(255);
   line(width/2, 0, width/2, height);
@@ -30,23 +25,13 @@ void draw() {
   //Scores (right, left)
   rect(xRightScore, yRightScore, widthScore, heightScore);
   rect(xLeftScore, yLeftScore, widthScore, heightScore);
+  //Movement
   
 }//End draw
 
 void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {
-    if (yLeftPaddle < 0)
-    {} else {
-     yLeftPaddle -= velPaddle;
-    }
-    } else if (keyCode == DOWN) {
-    if ((yLeftPaddle + heightPaddle) > height)
-    {} else {
-     yLeftPaddle += velPaddle;
-    }
-    }
-  }
+  //Right Paddle
+  rightPaddleKeyPressed();
 }// End keyPressed
 
 void mousePressed() {}//End mousePressed

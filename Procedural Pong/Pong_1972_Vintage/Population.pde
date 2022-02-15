@@ -1,3 +1,10 @@
+//Global Variables
+float xBall, yBall, ballDiameter, velBallX, velBallY;
+float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
+float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddleRight, velPaddleLeft;
+Boolean smoothRightUp = false, smoothRightDown = false;
+float score, xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
+
 void population() {
  //Ball Diameters
  xBall = displayWidth*1/2;
@@ -19,6 +26,7 @@ void population() {
  yRightPaddle = height/2 - heightPaddle/2;
  
  //Score Box Diameters
+ score = 0;
  widthScore = width/15;
  heightScore = height/15;
  xLeftScore = width/4 - widthScore/2 + x1LeftNet/2;
@@ -29,15 +37,14 @@ void population() {
  
  
  //Velocity
- velPaddle = height/20;
+ velPaddleRight = height/50;
+ velPaddleLeft = height/50;
  velBallX = int(random(-height/70, height/70));
  while(velBallX == 0) {
  velBallX = int(random(-height/70, height/70));
  };
- println(velBallX);
  velBallY = int(random(-height/100, height/100));
-  while(velBallY == 0) {
+ while(velBallY == 0) {
  velBallY = int(random(-height/100, height/100));
  };
- println(velBallY);
 }//End Population

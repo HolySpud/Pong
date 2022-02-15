@@ -1,4 +1,4 @@
-void leftPaddle() {
+void leftPaddleDraw() {
   leftPaddleStart();
 }
 
