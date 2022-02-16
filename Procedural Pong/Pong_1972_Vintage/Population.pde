@@ -2,7 +2,7 @@
 float xBall, yBall, ballDiameter, velBallX, velBallY;
 float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
 float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddleRight, velPaddleLeft;
-Boolean smoothRightUp = false, smoothRightDown = false;
+Boolean smoothRightUp = false, smoothRightDown = false, smoothLeftUp = false, smoothLeftDown = false;
 float score, xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
 
 void population() {
@@ -37,8 +37,8 @@ void population() {
  
  
  //Velocity
- velPaddleRight = height/50;
- velPaddleLeft = height/50;
+ velPaddleRight = height/100;
+ velPaddleLeft = height/100;
  velBallX = int(random(-height/70, height/70));
  while(velBallX == 0) {
  velBallX = int(random(-height/70, height/70));

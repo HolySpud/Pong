@@ -21,6 +21,13 @@ void ballMove() {
   velBallX = 0;
   velBallY = 0;
   }
+  //Paddle Bouncing (Right, Left)
+  if (yBall - ballDiameter/2 > yRightPaddle && yBall + ballDiameter/2 < yRightPaddle + heightPaddle && xBall + ballDiameter/2 >= xRightPaddle) {
+    velBallX *= -1;
+  }
+  if (yBall - ballDiameter/2 > yLeftPaddle && yBall + ballDiameter/2 < yLeftPaddle + heightPaddle && xBall - ballDiameter/2 <= xLeftPaddle + widthPaddle) {
+    velBallX *= -1;
+  }
   //Moving the ball
   xBall += velBallX;
   yBall += velBallY;

@@ -32,6 +32,12 @@ void draw() {
 void keyPressed() {
   //Right Paddle
   rightPaddleKeyPressed();
+  leftPaddleKeyPressed();
 }// End keyPressed
+
+void keyReleased() {
+  rightPaddleKeyReleased();
+  leftPaddleKeyReleased();
+}
 
 void mousePressed() {}//End mousePressed
