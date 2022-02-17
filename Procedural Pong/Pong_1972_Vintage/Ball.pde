@@ -16,10 +16,14 @@ void ballMove() {
   if (xBall + ballDiameter/2 >= x1RightNet) {
   velBallX = 0;
   velBallY = 0;
+  delay(300);
+  ballReset();
   }
   if (xBall - ballDiameter/2 <= x1LeftNet) {
   velBallX = 0;
   velBallY = 0;
+  delay(300);
+  ballReset();
   }
   //Paddle Bouncing (Right, Left)
   if (yBall > yRightPaddle && yBall < yRightPaddle + heightPaddle && xBall + ballDiameter/2 >= xRightPaddle) {
@@ -35,4 +39,18 @@ void ballMove() {
 
 void ballStart() {
 ellipse(xBall, yBall, ballDiameter, ballDiameter);
+}
+
+void ballReset() {
+score++;
+xBall = displayWidth*1/2;
+yBall = displayHeight*1/2;
+velBallX = int(random(-height/70, height/70));
+ while(velBallX == 0) {
+ velBallX = int(random(-height/70, height/70));
+ };
+ velBallY = int(random(-height/100, height/100));
+ while(velBallY == 0) {
+ velBallY = int(random(-height/100, height/100));
+ };
 }

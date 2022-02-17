@@ -12,17 +12,15 @@ void draw() {
   //Ball
   fill(255); 
   ball();
-  //Paddles (right, left)
+  //Paddles (Right, Left)
   leftPaddleDraw();
   rightPaddleDraw();
-  //Middle Net
+  //Nets (Middle, Right, Left)
   stroke(255);
   line(width/2, 0, width/2, height);
-  //Left Net
-  line(x1LeftNet, y1Net, x2LeftNet, y2Net);
-  //Right Net
   line(x1RightNet, y1Net, x2RightNet, y2Net);
-  //Scores (right, left)
+  line(x1LeftNet, y1Net, x2LeftNet, y2Net);
+  //Scores (Right, Left)
   rect(xRightScore, yRightScore, widthScore, heightScore);
   rect(xLeftScore, yLeftScore, widthScore, heightScore);
   //Movement
