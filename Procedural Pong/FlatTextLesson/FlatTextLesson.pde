@@ -1,4 +1,21 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+size(900, 900);
+println("Hello, World!");
+String[] fontList = PFont.list(); 
+printArray(fontList);
+PFont titleFont = createFont("Power Clear", 159);
+int titleX, titleY, titleWidth, titleHeight;
+titleX = width/5;
+titleY = height/10;
+titleWidth = width*3/5;
+titleHeight = height/10;
+rect(titleX, titleY, titleWidth, titleHeight);
+String title = "Wahoo!";
+color purpleInk = #D05CEA; //Daytime only, not for night mode
+color nightModeInk = #121212;
+color resetInk = #000000;
+//Text Initialization
+fill(purpleInk); //Ink
+textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+textFont(titleFont, titleY/1.1); //Change the number until it fits, largest font size
+text(title, titleX, titleY, titleWidth, titleHeight);
+fill(resetInk); //Ink to default
