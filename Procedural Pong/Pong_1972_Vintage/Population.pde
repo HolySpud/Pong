@@ -3,7 +3,10 @@ float xBall, yBall, ballDiameter, velBallX, velBallY;
 float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
 float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddleRight, velPaddleLeft;
 Boolean smoothRightUp = false, smoothRightDown = false, smoothLeftUp = false, smoothLeftDown = false;
-float score, xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
+float xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
+int score = 0;
+
+
 
 void population() {
  //Ball Diameters

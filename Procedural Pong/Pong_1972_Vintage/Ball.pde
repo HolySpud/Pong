@@ -26,7 +26,7 @@ void ballMove() {
   ballReset();
   }
   //Paddle Bouncing (Right, Left)
-  if (yBall > yRightPaddle && yBall < yRightPaddle + heightPaddle && xBall + ballDiameter/2 >= xRightPaddle) {
+  if (yBall > yRightPaddle && yBall < yRightPaddle + heightPaddle && xBall + ballDiameter/2 >= xRightPaddle ) {
     velBallX *= -1;
   }
   if (yBall > yLeftPaddle && yBall < yLeftPaddle + heightPaddle && xBall - ballDiameter/2 <= xLeftPaddle + widthPaddle) {
@@ -42,7 +42,7 @@ ellipse(xBall, yBall, ballDiameter, ballDiameter);
 }
 
 void ballReset() {
-score++;
+score += 1;
 xBall = displayWidth*1/2;
 yBall = displayHeight*1/2;
 velBallX = int(random(-height/70, height/70));

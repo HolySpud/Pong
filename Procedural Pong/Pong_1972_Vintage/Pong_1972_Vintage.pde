@@ -21,7 +21,7 @@ void draw() {
   line(x1RightNet, y1Net, x2RightNet, y2Net);
   line(x1LeftNet, y1Net, x2LeftNet, y2Net);
   //Scores (Right, Left)
-  rect(xRightScore, yRightScore, widthScore, heightScore);
+  rightScoreDraw();
   rect(xLeftScore, yLeftScore, widthScore, heightScore);
   //Movement
   
