@@ -6,8 +6,8 @@ textSetup();
 }
 
 void draw() {
-textGen(purpleInk, titleFont, 30, title, titleX, titleY, titleWidth, titleHeight, resetColor); //Left Score
-textGen(purpleInk, titleFont, 50, title, titleX, titleY + 50, titleWidth, titleHeight, resetColor); //Right Score
+textGen(purpleInk, titleFont, 30, CENTER, CENTER, title, titleX, titleY, titleWidth, titleHeight, resetColor); //Left Score
+textGen(purpleInk, titleFont, 30, CENTER, TOP, title2, titleX, titleY, titleWidth, titleHeight, resetColor); //Right Score
 }
 
 void keyPressed() {}

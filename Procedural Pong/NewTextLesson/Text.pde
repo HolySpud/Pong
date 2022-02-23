@@ -4,7 +4,7 @@
 //Global Variables
 PFont titleFont;
 int titleX, titleY, titleWidth, titleHeight;
-String title = "Wahoo!";
+String title = "Wahoo!", title2 = "Yahoo!";
 color purpleInk = #88007D, nightModeInk = #04B200, resetColor = #000000;
 //
 void textSetup() 
@@ -21,16 +21,14 @@ void textLayout() {
 rect(titleX, titleY, titleWidth, titleHeight); 
 }
 
-void preDrawText(color inkInitial, PFont font, int fontSize) {
-fill(inkInitial); //Ink
-textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-textFont(font, fontSize); //Change the number until it fits, largest font size
+void preDrawText(color inkInitial, PFont font, int fontSize, int alignHorizontal, int alignVertical) {
+fill(inkInitial);
+textAlign(alignHorizontal, alignVertical); 
+textFont(font, fontSize); 
 }
-//fill(purpleInk);
-//textAlign(CENTER, CENTER); 
-//textFont(titleFont, titleY/1.1); 
-void textGen(color inkInitial, PFont font, int fontSize, String text, int X, int Y, int W, int H, color inkFinal) {
-preDrawText(inkInitial, font, fontSize);
+
+void textGen(color inkInitial, PFont font, int fontSize, int alignHorizontal, int alignVertical, String text, int X, int Y, int W, int H, color inkFinal) {
+preDrawText(inkInitial, font, fontSize, alignHorizontal, alignVertical);
 text(text, X, Y, W, H);
 textReset(inkFinal);
 }
