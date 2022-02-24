@@ -10,12 +10,13 @@ color purpleInk = #88007D, nightModeInk = #04B200, resetColor = #000000;
 void textSetup() 
 {
 String[] fontList = PFont.list();
-titleFont = createFont("Power Clear", 20);
+titleFont = createFont("Power Clear", 50);
 //Population
 titleX = width/5;
 titleY = height/10;
-titleWidth = width*3/5;
+titleWidth = width/2;
 titleHeight = height/10;
+
 }
 void textLayout() {
 rect(titleX, titleY, titleWidth, titleHeight); 
@@ -36,3 +37,13 @@ textReset(inkFinal);
 void textReset(color inkFinal) {
 fill(inkFinal); //Ink to default
 }//End textReset
+
+float textCalculator(float size, float rectWidth, String string) 
+{
+  
+  textSize(size);
+  while (textWidth(string) > rectWidth) {
+  size = size * 0.99;
+  }
+  return size;
+}
