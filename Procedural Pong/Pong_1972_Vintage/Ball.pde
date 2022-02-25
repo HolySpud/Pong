@@ -12,19 +12,6 @@ void ballMove() {
   if(xBall + ballDiameter/2>= width || xBall - ballDiameter/2 <= 0) {
   velBallX *= -1;
   }
-  //Goal (Right, Left)
-  if (xBall + ballDiameter/2 >= x1RightNet) {
-  velBallX = 0;
-  velBallY = 0;
-  delay(300);
-  ballReset();
-  }
-  if (xBall - ballDiameter/2 <= x1LeftNet) {
-  velBallX = 0;
-  velBallY = 0;
-  delay(300);
-  ballReset();
-  }
   //Paddle Bouncing (Right, Left)
   if (yBall > yRightPaddle && yBall < yRightPaddle + heightPaddle && xBall + ballDiameter/2 >= xRightPaddle ) {
     velBallX *= -1;
@@ -35,14 +22,34 @@ void ballMove() {
   //Moving the ball
   xBall += velBallX;
   yBall += velBallY;
+  //Goal (Right, Left)
+  if (xBall + ballDiameter/2 >= x1RightNet) {
+  velBallX = 0;
+  velBallY = 0;
+  delay(500);
+  ballReset(true);
+  }
+  if (xBall - ballDiameter/2 <= x1LeftNet) {
+  velBallX = 0;
+  velBallY = 0;
+  delay(500);
+  ballReset(false);
+  }
+  //Win Check
+  if (scoreRight >= scoreMax || scoreLeft >= scoreMax) {
+  textAlign(CENTER, CENTER);
+  text("YOU WIN", width/2, height/30);
+  velBallX *= 0;
+  velBallY *= 0;
+  }
 }
 
 void ballStart() {
 ellipse(xBall, yBall, ballDiameter, ballDiameter);
 }
 
-void ballReset() {
-score += 1;
+void ballReset(Boolean sideCheck) {
+if (sideCheck) scoreRight++; else scoreLeft++;
 xBall = displayWidth*1/2;
 yBall = displayHeight*1/2;
 velBallX = int(random(-height/70, height/70));

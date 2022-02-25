@@ -22,7 +22,8 @@ void draw() {
   line(x1LeftNet, y1Net, x2LeftNet, y2Net);
   //Scores (Right, Left)
   rightScoreDraw();
-  rect(xLeftScore, yLeftScore, widthScore, heightScore);
+  fill(255);
+  leftScoreDraw();
   //Movement
   
 }//End draw
@@ -31,6 +32,7 @@ void keyPressed() {
   //Right Paddle
   rightPaddleKeyPressed();
   leftPaddleKeyPressed();
+  instantWin();
 }// End keyPressed
 
 void keyReleased() {

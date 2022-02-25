@@ -4,7 +4,7 @@ float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
 float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddleRight, velPaddleLeft;
 Boolean smoothRightUp = false, smoothRightDown = false, smoothLeftUp = false, smoothLeftDown = false;
 float xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
-int score = 0;
+int scoreRight = 0, scoreLeft = 0, scoreMax = 3;
 
 
 
@@ -29,7 +29,6 @@ void population() {
  yRightPaddle = height/2 - heightPaddle/2;
  
  //Score Box Diameters
- score = 0;
  widthScore = width/15;
  heightScore = height/15;
  xLeftScore = width/4 - widthScore/2 + x1LeftNet/2;
