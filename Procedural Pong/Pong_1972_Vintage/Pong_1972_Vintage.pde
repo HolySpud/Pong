@@ -6,7 +6,11 @@ void setup() {
 }//End Setup
 
 void draw() {
+  if (menu) {
   gameDraw();
+  } else {
+    
+  }
 }//End draw
 
 void keyPressed() {
