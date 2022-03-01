@@ -36,8 +36,6 @@ void population() {
  xRightScore = width - width/4 - widthScore/2 - x1LeftNet/2;
  yRightScore = yLeftScore;
  
- 
- 
  //Velocity
  velPaddleRight = height/100;
  velPaddleLeft = height/100;

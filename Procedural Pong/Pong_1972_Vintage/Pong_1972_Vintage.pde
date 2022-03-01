@@ -6,26 +6,7 @@ void setup() {
 }//End Setup
 
 void draw() {
-  //Background
-  fill(0);
-  rect(0, 0, width, height);
-  //Ball
-  fill(255); 
-  ball();
-  //Paddles (Right, Left)
-  leftPaddleDraw();
-  rightPaddleDraw();
-  //Nets (Middle, Right, Left)
-  stroke(255);
-  line(width/2, 0, width/2, height);
-  line(x1RightNet, y1Net, x2RightNet, y2Net);
-  line(x1LeftNet, y1Net, x2LeftNet, y2Net);
-  //Scores (Right, Left)
-  rightScoreDraw();
-  fill(255);
-  leftScoreDraw();
-  //Movement
-  
+  gameDraw();
 }//End draw
 
 void keyPressed() {

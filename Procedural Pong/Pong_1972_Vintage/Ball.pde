@@ -38,7 +38,7 @@ void ballMove() {
   //Win Check
   if (scoreRight >= scoreMax || scoreLeft >= scoreMax) {
   textAlign(CENTER, CENTER);
-  text("YOU WIN", width/2, height/30);
+  text("YOU WIN", width/2, height/10);
   velBallX *= 0;
   velBallY *= 0;
   }
