@@ -10,8 +10,8 @@ int scoreRight = 0, scoreLeft = 0, scoreMax = 3;
 
 void population() {
  //Ball Diameters
- xBall = displayWidth*1/2;
- yBall = displayHeight*1/2;
+ xBall = width*1/2;
+ yBall = height*1/2;
  ballDiameter = width*1/50;
  
  //Net Diameters

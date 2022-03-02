@@ -1,16 +1,12 @@
 
 void setup() {
  //size(displayHeight, displayHeight);
- fullScreen();
+ size(1000, 600);
  population();
 }//End Setup
 
 void draw() {
-  if (menu) {
   gameDraw();
-  } else {
-    
-  }
 }//End draw
 
 void keyPressed() {
