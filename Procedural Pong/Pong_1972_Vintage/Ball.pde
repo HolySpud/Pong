@@ -50,14 +50,5 @@ ellipse(xBall, yBall, ballDiameter, ballDiameter);
 
 void ballReset(Boolean sideCheck) {
 if (sideCheck) scoreRight++; else scoreLeft++;
-xBall = width*1/2;
-yBall = height*1/2;
-velBallX = int(random(-height/70, height/70));
- while(velBallX == 0) {
- velBallX = int(random(-height/70, height/70));
- };
- velBallY = int(random(-height/100, height/100));
- while(velBallY == 0) {
- velBallY = int(random(-height/100, height/100));
- };
+population();
 }

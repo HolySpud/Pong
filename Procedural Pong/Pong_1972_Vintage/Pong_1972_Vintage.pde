@@ -18,6 +18,9 @@ void keyPressed() {
   rightPaddleKeyPressed();
   leftPaddleKeyPressed();
   instantWin();
+  //Main Menu Binds
+  paddleSpeed(); // 'J'
+  keyStart(); // ' '
 }// End keyPressed
 
 void keyReleased() {
