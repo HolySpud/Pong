@@ -2,7 +2,7 @@
 float xBall, yBall, ballDiameter, velBallX, velBallY;
 float x2LeftNet, x1LeftNet, x1RightNet, x2RightNet, y1Net, y2Net;
 float xLeftPaddle, yLeftPaddle, xRightPaddle, yRightPaddle, widthPaddle, heightPaddle, velPaddleRight, velPaddleLeft;
-Boolean smoothRightUp = false, smoothRightDown = false, smoothLeftUp = false, smoothLeftDown = false, start = false;
+Boolean smoothRightUp = false, smoothRightDown = false, smoothLeftUp = false, smoothLeftDown = false, start = false, paddleSpeed = false, ballSpeed1 = false, ballSpeed2 = false, ballSpeed3 = false;
 float xLeftScore, yLeftScore, xRightScore, yRightScore, widthScore, heightScore;
 int scoreRight = 0, scoreLeft = 0, scoreMax = 3;
 

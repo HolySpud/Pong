@@ -1,7 +1,7 @@
 
 void setup() {
  //size(displayHeight, displayHeight);
- size(1000, 600);
+ fullScreen();
  population();
 }//End Setup
 
