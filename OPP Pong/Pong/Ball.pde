@@ -15,7 +15,6 @@ void drawCircle() {
 fill(c);
 ellipse(x, y, d, d);
 move();
-
 } //End Draw
 
 void move() {
@@ -31,5 +30,8 @@ xVel *= -1;
 if (y - d/2 <= height*0 || y + d/2 > height) {
 yVel *= -1;
 }
+}
+
+void paddleBounce() {
 }
 } //End Ball
