@@ -1,14 +1,20 @@
 class Ball {
-float x, y, d;
+float x, y, d, xStart, yStart, xDirection, yDirection;
 color c;
 int xVel, yVel;
-Ball(float xParameter, float yParameter, float dParameter, color cParameter) { //Constructor is hard coded, not meant to be changed.
-x = xParameter;
-y = yParameter;
-d = dParameter;
+Ball(float widthParameter, float heightParameter, color cParameter) {
+this.x = widthParameter/2;
+this.y = heightParameter/2;
+xStart = x;
+yStart = y;
+d = height/25;
 c = cParameter;
-xVel = 10;
-yVel = 10;
+xVel = int(random(widthParameter/widthParameter, widthParameter/widthParameter*5));
+yVel = int(random(heightParameter/heightParameter, heightParameter/heightParameter*5));
+xDirection = int(random (-2, 2));
+while (xDirection == 0) {xDirection = int(random (-2, 2));}
+yDirection = int(random (-2, 2));
+while (yDirection == 0) {yDirection = int(random (-2, 2));}
 } //End Constructor
 //
 void drawCircle() {
@@ -21,6 +27,7 @@ void move() {
 x += xVel;
 y += yVel;
 bounce();
+paddleBounce();
 }
 
 void bounce() {
