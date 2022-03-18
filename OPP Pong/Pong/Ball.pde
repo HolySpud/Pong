@@ -1,13 +1,15 @@
 class Ball {
 float x, y, d, xStart, yStart, xDirection, yDirection;
 color c;
-int xVel, yVel;
+int xVel, yVel, score;
+
+//int ballCount = 10;
 Ball(float widthParameter, float heightParameter, color cParameter) {
 this.x = widthParameter/2;
 this.y = heightParameter/2;
 xStart = x;
 yStart = y;
-d = height/25;
+d = heightParameter/25;
 c = cParameter;
 xVel = int(random(widthParameter/widthParameter, widthParameter/widthParameter*5));
 yVel = int(random(heightParameter/heightParameter, heightParameter/heightParameter*5));
@@ -41,4 +43,9 @@ yVel *= -1;
 
 void paddleBounce() {
 }
+
+void ballScore() {
+
+}
+
 } //End Ball

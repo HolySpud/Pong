@@ -5,7 +5,7 @@ Paddle leftPaddle;
 Background gameBG;
 //
 void setup() { //Start
-  size(1000, 800); // fullScreen(); displayWidth, displayHeight
+  fullScreen(); // fullScreen(); displayWidth, displayHeight
   //Object, Class
   //
   gameBall = new Ball(width, height, #1FFF03); // (X, Y, Size (Diameter), Color)
@@ -23,6 +23,7 @@ gameBG.drawBG(); //BG Reset
 gameBall.drawCircle(); // Ball Draw
 rightPaddle.drawPaddle(); // Right Paddle Draw
 leftPaddle.drawPaddle(); // Left Paddle Draw
+
 }
 void keyPressed() {
   rightPaddle.moveStart();
