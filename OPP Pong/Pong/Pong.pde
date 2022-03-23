@@ -9,8 +9,8 @@ void setup() { //Start
   //Object, Class
   //
   gameBall = new Ball(width, height, #1FFF03); // (X, Y, Size (Diameter), Color)
-  rightPaddle = new Paddle(width - width/50, height/2, width/50, height/4, #1FFF03, 'i', 'k'); // (X, Y, Width, Height, Color, Up Key, Down Key)
-  leftPaddle = new Paddle(0, height/2, width/50, height/4, #1FFF03, 'w', 's'); // 
+  rightPaddle = new Paddle(width - width/50, height/2, #1FFF03, 'i', 'k'); // (X, Y, Width, Height, Color, Up Key, Down Key)
+  leftPaddle = new Paddle(0, height/2, #1FFF03, 'w', 's'); // 
   gameBG = new Background(#ffffff);
   //Constructors
   //

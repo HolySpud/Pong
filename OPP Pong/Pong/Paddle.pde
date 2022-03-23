@@ -6,15 +6,15 @@ class Paddle {
   Boolean moveCheckUp = false, moveCheckDown = false;
 
 
-  Paddle(float xParameter, float yParameter, float wParameter, float hParameter, color cParameter, char upParameter, char downParameter) {
+  Paddle(float xParameter, float yParameter, color cParameter, char upParameter, char downParameter) {
     x = xParameter;
     y = yParameter;
-    w = wParameter;
-    h = hParameter;
+    w = width/50;
+    h = height/4;
     c = cParameter;
     up = upParameter;
     down = downParameter;
-    yVel = 5;
+    yVel = 10;
   }
 
   void drawPaddle() {
