@@ -20,7 +20,7 @@ void setup() { //Start
 } //End
 void draw() {
 gameBG.drawBG(); //BG Reset
-gameBall.drawCircle(); // Ball Draw
+gameBall.drawCircle(leftPaddle, rightPaddle); // Ball Draw
 rightPaddle.drawPaddle(); // Right Paddle Draw
 leftPaddle.drawPaddle(); // Left Paddle Draw
 

@@ -7,10 +7,10 @@ class Paddle {
 
 
   Paddle(float xParameter, float yParameter, color cParameter, char upParameter, char downParameter) {
-    x = xParameter;
-    y = yParameter;
     w = width/50;
     h = height/4;
+    x = xParameter;
+    y = yParameter - h/2;
     c = cParameter;
     up = upParameter;
     down = downParameter;
@@ -19,7 +19,7 @@ class Paddle {
 
   void drawPaddle() {
     fill(c);
-    rect(x, y - h/2, w, h);
+    rect(x, y, w, h);
     move();
   }
   void moveStart() {
@@ -32,10 +32,10 @@ class Paddle {
   }
 //
   void move() {
-    if (moveCheckUp && y - h/2 > 0) {
+    if (moveCheckUp && y > 0) {
       y -= yVel;
     }
-    if (moveCheckDown && y + h/2 < height) {
+    if (moveCheckDown && y + h < height) {
       y += yVel;
     }
   }

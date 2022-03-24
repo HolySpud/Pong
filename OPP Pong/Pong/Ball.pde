@@ -11,31 +11,40 @@ xStart = x;
 yStart = y;
 d = heightParameter/25;
 c = cParameter;
-xVel = int(random(widthParameter/widthParameter, widthParameter/widthParameter*5));
-yVel = int(random(heightParameter/heightParameter, heightParameter/heightParameter*5));
+xVel = int(random(widthParameter/widthParameter, widthParameter/widthParameter*10));
+yVel = int(random(heightParameter/heightParameter, heightParameter/heightParameter*10));
 xDirection = int(random (-2, 2));
 while (xDirection == 0) {xDirection = int(random (-2, 2));}
 yDirection = int(random (-2, 2));
 while (yDirection == 0) {yDirection = int(random (-2, 2));}
 } //End Constructor
 //
-void drawCircle() {
+void drawCircle(Paddle left, Paddle right) {
 fill(c);
 ellipse(x, y, d, d);
-move();
+move(left, right);
 } //End Draw
 
-void move() {
+void move(Paddle left, Paddle right) {
 x += xVel;
 y += yVel;
-bounce();
+bounce(left, right);
 paddleBounce();
 }
 
-void bounce() {
+void bounce(Paddle left, Paddle right) {
+// Horizontal Bouncing
 if (x - d/2 <= width*0 || x + d/2 > width) {
 xVel *= -1;
 }
+// Paddle Bouncing (Left, Right)
+if (y > left.y && y < left.y + left.h && x - d/2 <= left.x + left.w) {
+xVel *= -1;
+}
+if (y > right.y && y < right.y + right.h && x + d/2 >= right.x) {
+xVel *= -1;
+}
+// Vertical Bouncing
 if (y - d/2 <= height*0 || y + d/2 > height) {
 yVel *= -1;
 }
