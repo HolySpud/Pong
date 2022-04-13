@@ -19,23 +19,30 @@ yDirection = int(random (-2, 2));
 while (yDirection == 0) {yDirection = int(random (-2, 2));}
 } //End Constructor
 //
-void drawCircle(Paddle left, Paddle right) {
+void drawCircle(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
 fill(c);
 ellipse(x, y, d, d);
-move(left, right);
+move(left, right, scoreRight, scoreLeft);
 } //End Draw
 
-void move(Paddle left, Paddle right) {
+void move(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
 x += xVel;
 y += yVel;
-bounce(left, right);
+bounce(left, right, scoreRight, scoreLeft);
 paddleBounce();
 }
 
-void bounce(Paddle left, Paddle right) {
+void bounce(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
 // Horizontal Bouncing
-if (x - d/2 <= width*0 || x + d/2 > width) {
-xVel *= -1;
+if (x - d/2 <= width*0) {
+xVel *= 0;
+yVel *= 0;
+scoreLeft.score++;
+}
+if (x + d/2 > width) {
+xVel *= 0;
+yVel *= 0;
+scoreRight.score++;
 }
 // Paddle Bouncing (Left, Right)
 if (y > left.y && y < left.y + left.h && x - d/2 <= left.x + left.w) {
@@ -54,7 +61,6 @@ void paddleBounce() {
 }
 
 void ballScore() {
-
 }
 
 } //End Ball
