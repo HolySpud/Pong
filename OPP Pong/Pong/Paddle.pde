@@ -33,10 +33,10 @@ class Paddle {
 //
   void move() {
     if (moveCheckUp && y > 0) {
-      y -= yVel;
+      y -= (yVel*paddleSpeed);
     }
     if (moveCheckDown && y + h < height) {
-      y += yVel;
+      y += (yVel*paddleSpeed);
     }
   }
 //
