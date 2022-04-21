@@ -1,6 +1,6 @@
 //Global Variables
-Boolean start = false;
-int paddleSpeed = 1, ballSpeed = 1;
+Boolean win = false;
+
 Ball gameBall;
 Paddle rightPaddle;
 Paddle leftPaddle;
