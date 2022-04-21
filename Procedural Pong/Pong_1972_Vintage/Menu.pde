@@ -1,10 +1,9 @@
 void mainMenu() {
 PFont titleFont = createFont("Power Clear", 20);
-String paddleBool = str(scoreLeft);
 fill(#D05CEA); //Ink
 textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-textFont(titleFont, 30);
-text("PRESS SPACE TO START", width/2, height/2);
+textFont(titleFont, 50);
+text("PRESS SPACE TO START", width/2, height/3);
 }
 
 void keyStart() {
