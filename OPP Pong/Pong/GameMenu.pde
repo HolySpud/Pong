@@ -1,8 +1,29 @@
 // Global Settings Variables
 Boolean start = false;
-int paddleSpeed = 1, ballSpeed = 1, scoreMax = 3;
 
-void gameMenu() {
+class GameMenu {
+char startLet, paddleCap, paddleLow, ballCap, ballLow, scoreCap, scoreLow;
+int paddleSpeed, ballSpeed, scoreMax;
+
+GameMenu() {
+startLet = ' ';
+
+paddleCap = 'B';
+paddleLow = 'b';
+
+ballCap = 'N';
+ballLow = 'n';
+
+scoreCap = 'M';
+scoreLow = 'm';
+
+paddleSpeed = 1;
+ballSpeed = 1;
+scoreMax = 3;
+
+}
+
+void menuGuide() {
 PFont titleFont = createFont("Power Clear", 20);
 gameBG.drawBG();
 fill(#D05CEA); //Ink
@@ -14,26 +35,41 @@ text("Ball Speed: " + str(ballSpeed), width/2, height/2);
 text("Max score: " + str(scoreMax), width/1.35, height/2);
 }
 
-void menuBinds() {
- if (key == ' ' && start == false) {
+void startBind() {
+if (key == ' ' && start == false) {
  start = true;
  }
- // Paddle Settings
- if (key == 'B' || key == 'b' && paddleSpeed < 4 && start == false) {
+}
+
+void paddleBind() {
+if (key == 'B' || key == 'b' && paddleSpeed < 4 && start == false) {
    paddleSpeed++;
  } if (key == 'B' || key == 'b' && paddleSpeed == 4 && start == false) { 
    paddleSpeed = 1;
  }
- // Ball Settings
- if (key == 'N' || key == 'n' && ballSpeed < 4 && start == false) {
+}
+
+void ballBind() {
+if (key == 'N' || key == 'n' && ballSpeed < 4 && start == false) {
    ballSpeed++;
  } if (key == 'N' || key == 'n' && ballSpeed == 4 && start == false) {
    ballSpeed = 1;
  }
- // Score Settings
- if (key == 'M' || key == 'm' && scoreMax < 7 && start == false) {
+}
+
+void scoreBind() {
+if (key == 'M' || key == 'm' && scoreMax < 7 && start == false) {
    scoreMax++;
  } if (key == 'M' || key == 'm' && scoreMax == 7 && start == false) {
    scoreMax = 3;
  }
+}
+
+void allBind() {
+startBind();
+paddleBind();
+ballBind();
+scoreBind();
+}
+
 }

@@ -17,10 +17,10 @@ class Paddle {
     yVel = 10;
   }
 
-  void drawPaddle() {
+  void drawPaddle(GameMenu menuMain) {
     fill(c);
     rect(x, y, w, h);
-    move();
+    move(menuMain);
   }
   void moveStart() {
     if (key == up) {
@@ -31,12 +31,12 @@ class Paddle {
     }
   }
 //
-  void move() {
+  void move(GameMenu menuMain) {
     if (moveCheckUp && y > 0) {
-      y -= (yVel*paddleSpeed);
+      y -= (yVel* menuMain.paddleSpeed);
     }
     if (moveCheckDown && y + h < height) {
-      y += (yVel*paddleSpeed);
+      y += (yVel* menuMain.paddleSpeed);
     }
   }
 //

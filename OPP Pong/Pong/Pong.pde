@@ -7,6 +7,7 @@ Paddle leftPaddle;
 Background gameBG;
 ScoreBoard rightScoreBoard;
 ScoreBoard leftScoreBoard;
+GameMenu mainMenu;
 //
 void setup() { //Start
   fullScreen(); // fullScreen(); displayWidth, displayHeight
@@ -18,6 +19,7 @@ void setup() { //Start
   gameBG = new Background(#ffffff); // (Color)
   rightScoreBoard = new ScoreBoard(width - width/4 - (width/15)/2); // (X)
   leftScoreBoard = new ScoreBoard(width/4 - width/15); // (X)
+  mainMenu = new GameMenu();
   //Constructors
   //
   
@@ -28,7 +30,7 @@ void draw() {
   if (start) {
   gameStart();
   } else {
-  gameMenu();
+  mainMenu.menuGuide();
   }
   
 }
@@ -40,7 +42,7 @@ void keyPressed() {
 void keyReleased() {
   rightPaddle.moveStop();
   leftPaddle.moveStop();
-  menuBinds();
+  mainMenu.allBind();
 }
 void mousePressed() {
 }

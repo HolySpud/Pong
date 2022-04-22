@@ -19,22 +19,27 @@ xVel = int(random(widthParameter/widthParameter, widthParameter/widthParameter*1
 yVel = int(random(heightParameter/heightParameter, heightParameter/heightParameter*10)) * yDirection;
 } //End Constructor
 //
-void drawCircle(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
+void drawCircle(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft, GameMenu mainMenu) {
 fill(c);
 ellipse(x, y, d, d);
-move(left, right, scoreRight, scoreLeft);
+move(left, right, scoreRight, scoreLeft, mainMenu);
 } //End Draw
 
-void scoreCheck(ScoreBoard scoreRight, ScoreBoard scoreLeft) { // Checks when player has reached end score and provides a "win" screen
-if (scoreRight.score >= scoreMax || scoreLeft.score >= scoreMax && win == false) {
+void scoreCheck(ScoreBoard scoreRight, ScoreBoard scoreLeft, GameMenu menuMain) { // Checks when player has reached end score and provides a "win" screen
+if (scoreRight.score >= menuMain.scoreMax || scoreLeft.score >= menuMain.scoreMax && win == false) {
   textAlign(CENTER, CENTER);
   text("YOU WIN", width/2, height/10);
   xVel *= 0;
   yVel *= 0;
   x = xStart;
   y = yStart;
-  win = true;
+  test();
   } 
+}
+
+void test() {
+start = false;
+delay(1000);
 }
 
 void score() { // Score function that resets ball position and randomizes it's velocity and direction
@@ -51,11 +56,11 @@ void score() { // Score function that resets ball position and randomizes it's v
   yVel = int(random(y/y, y/y*10)) * yDirection;
 }
 
-void move(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) { // 
-x += (xVel * ballSpeed);
-y += (yVel * ballSpeed);
+void move(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft, GameMenu menuMain) { // 
+x += (xVel * menuMain.ballSpeed);
+y += (yVel * menuMain.ballSpeed);
 bounce(left, right, scoreRight, scoreLeft);
-scoreCheck(scoreRight, scoreLeft);
+scoreCheck(scoreRight, scoreLeft, menuMain);
 paddleBounce();
 }
 
