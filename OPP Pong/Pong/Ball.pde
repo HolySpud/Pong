@@ -67,14 +67,10 @@ paddleBounce();
 void bounce(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
 // Horizontal Bouncing
 if (x - d/2 <= width*0) {
-xVel *= 0;
-yVel *= 0;
 scoreLeft.score++;
 score();
 }
 if (x + d/2 > width) {
-xVel *= 0;
-yVel *= 0;
 scoreRight.score++;
 score();
 }
