@@ -28,11 +28,15 @@ PFont titleFont = createFont("Power Clear", 20);
 gameBG.drawBG();
 fill(#D05CEA); //Ink
 textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-textFont(titleFont, 50);
-text("PRESS SPACE TO START", width/2, height/3);
-text("Paddle Speed: " + str(paddleSpeed), width/4, height/2);
-text("Ball Speed: " + str(ballSpeed), width/2, height/2);
-text("Max score: " + str(scoreMax), width/1.35, height/2);
+textFont(titleFont, width/15);
+text("PONG", width/2, height/6);
+textFont(titleFont, height/17);
+text("(P) Controls", width/2, height/2.5);
+text("(" + str(paddleCap) + ") " + "Paddle Speed: " + str(paddleSpeed), width/4, height/2);
+text("(" + str(ballCap) + ") " + "Ball Speed: " + str(ballSpeed), width/2, height/2);
+text("(" + str(scoreCap) + ") " + "Max score: " + str(scoreMax), width/1.35, height/2);
+textFont(titleFont, width/25);
+text("PRESS SPACE TO START", width/2, height/1.5);
 }
 
 void startBind() {

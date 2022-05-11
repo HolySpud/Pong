@@ -1,16 +1,13 @@
-class Paddle {
-  float x, y, w, h;
+class Paddle extends Shape {
   color c;
   int yVel;
   char up, down;
   Boolean moveCheckUp = false, moveCheckDown = false;
 
 
-  Paddle(float xParameter, float yParameter, color cParameter, char upParameter, char downParameter) {
-    w = width/50;
-    h = height/4;
-    x = xParameter;
-    y = yParameter - h/2;
+  Paddle(float x, float y, float w, float h, color cParameter, char upParameter, char downParameter) {
+    super(x, y, w, h);
+    y = y - h/2;
     c = cParameter;
     up = upParameter;
     down = downParameter;

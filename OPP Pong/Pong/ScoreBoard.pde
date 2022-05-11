@@ -1,13 +1,9 @@
-class ScoreBoard {
-float x, y, w, h;
+class ScoreBoard extends Shape {
 color c;
 int score;
 
-ScoreBoard(float xParameter) {
-w = width/15;
-h = height/15;
-x = xParameter;
-y = height/20;
+ScoreBoard(float x, float y, float w, float h) {
+super(x, y, w, h);
 c = #808080;
 score = 0;
 }

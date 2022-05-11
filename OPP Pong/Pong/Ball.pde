@@ -1,15 +1,13 @@
-class Ball {
-float x, y, d, xStart, yStart;
+class Ball extends Shape {
+float xStart, yStart;
 color c;
 int xVel, yVel, score, xDirection, yDirection;
 
 //int ballCount = 10;
-Ball(float widthParameter, float heightParameter, color cParameter) {
-this.x = widthParameter/2;
-this.y = heightParameter/2;
+Ball(float x, float y, float w, float h, float widthParameter, float heightParameter, color cParameter) {
+super(x, y, w, h);
 xStart = x;
 yStart = y;
-d = heightParameter/25;
 c = cParameter;
 xDirection = int(random (-2, 2));
 while (xDirection == 0) {xDirection = int(random (-2, 2));}
@@ -21,7 +19,7 @@ yVel = int(random(heightParameter/heightParameter, heightParameter/heightParamet
 //
 void drawCircle(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft, GameMenu mainMenu) {
 fill(c);
-ellipse(x, y, d, d);
+ellipse(x, y, w, h);
 move(left, right, scoreRight, scoreLeft, mainMenu);
 } //End Draw
 
@@ -66,23 +64,23 @@ paddleBounce();
 
 void bounce(Paddle left, Paddle right, ScoreBoard scoreRight, ScoreBoard scoreLeft) {
 // Horizontal Bouncing
-if (x - d/2 <= width*0) {
+if (x - w/2 <= width*0) {
 scoreLeft.score++;
 score();
 }
-if (x + d/2 > width) {
+if (x + w/2 > width) {
 scoreRight.score++;
 score();
 }
 // Paddle Bouncing (Left, Right)
-if (y > left.y && y < left.y + left.h && x - d/2 <= left.x + left.w) {
+if (y > left.y && y < left.y + left.h && x - w/2 <= left.x + left.w) {
 xVel *= -1;
 }
-if (y > right.y && y < right.y + right.h && x + d/2 >= right.x) {
+if (y > right.y && y < right.y + right.h && x + w/2 >= right.x) {
 xVel *= -1;
 }
 // Vertical Bouncing
-if (y - d/2 <= height*0 || y + d/2 > height) {
+if (y - w/2 <= height*0 || y + w/2 > height) {
 yVel *= -1;
 }
 }
