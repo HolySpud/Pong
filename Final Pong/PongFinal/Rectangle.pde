@@ -1,3 +1,3 @@
-class Rect extends ??? {
-void draw() {}
-}
+//class Rect extends ??? {
+//void draw() {}
+//}

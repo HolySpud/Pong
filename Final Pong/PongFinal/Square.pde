@@ -1,3 +1,3 @@
-class Square extends ??? {
-void draw() {}
-}
+//class Square extends ??? {
+//void draw() {}
+//}

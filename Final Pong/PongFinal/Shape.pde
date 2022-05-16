@@ -4,4 +4,6 @@ Shape (float xParameter, float yParameter) {
 this.x = xParameter;
 this.y = yParameter;
 }
+abstract void draw(); {
+}
 }
