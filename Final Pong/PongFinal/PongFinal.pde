@@ -17,9 +17,9 @@ size(500, 500);
 
 void draw() {
 rect(0, 0, width, height);
-for( Shape s : shapes) {
-
-}
+for (Shape s : shapes) {
+    s.draw();
+  }
 }
 
 void keyPressed() {

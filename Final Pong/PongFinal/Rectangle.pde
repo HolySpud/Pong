@@ -1,3 +1,3 @@
-//class Rect extends ??? {
+//final class Rect extends Shape {
 //void draw() {}
 //}
