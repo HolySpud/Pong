@@ -8,7 +8,5 @@ stroke(#2B2B2B);
 ellipse(x, y, ptX, ptY);
 fill(#FFFFFF);
 }
-final color fillColour (color colour) {
-return color(0,0,0);
-}
+
 }
