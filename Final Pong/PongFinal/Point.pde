@@ -5,4 +5,6 @@ super(x, y);
 void draw() {
 point(x, y);
 }
+//Common Methods
+
 }

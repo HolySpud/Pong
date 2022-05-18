@@ -6,7 +6,7 @@ class Circle extends Point {
   }
   
 void draw() {
-fill(#2B2B2B); // Non-White Color
+stroke(#2B2B2B); // Non-White Color
 circle (x, y, diameter);
 fill(#FFFFFF); // White Color
 }

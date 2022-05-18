@@ -1,3 +1,3 @@
-//class Square extends ??? {
+//class Square extends Point {
 //void draw() {}
 //}
