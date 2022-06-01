@@ -1,8 +1,8 @@
 ArrayList<Shape> shapes = new ArrayList<Shape>();
-
+Player box;
 void setup() {
-size(500, 500);
-fill();
+fullScreen();
+finish();
 }
 
 void draw() {
@@ -13,7 +13,9 @@ for (Shape s : shapes) {
 }
 
 void keyPressed() {
-
+box.moveStart();
 }
 
-void keyReleased() {}
+void keyReleased() {
+box.moveStop();
+}
