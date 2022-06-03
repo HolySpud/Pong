@@ -1,0 +1,5 @@
+- Bullet hell game, dodge barrage of projectiles coming at your character, return the favor by attacking using your mouse
+- Sprites
+- Items?
+- Hardmode
+- Classes
