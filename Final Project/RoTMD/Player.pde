@@ -7,42 +7,48 @@ PImage left1, left2, front1, front2, front3, back1, back2, back3;
 //Constructor
 Player(float x, float y) {
 super(x, y); //Super
-speed = 10; //Character Speed
-strSpeed = 10;
-diagSpeed = sqrt((speed*speed)/2);
+
+speed = 10; //Dynamic Speed
+strSpeed = speed; // Static Normal Speed
+diagSpeed = sqrt((speed*speed)/2); // Static Diagonal Speed
+
 //Width, Height
 w = height/40;
 h = w;
+
 //Up Bind
 upCap = 'W';
 upLow = 'w';
+
 //Down Bind
 downCap = 'S';
 downLow = 's';
+
 //Left Bind
 leftCap = 'A';
 leftLow = 'a';
+
 //Right Bind
 rightCap = 'D';
 rightLow = 'd';
 }
-//Draw
-void draw() {
+
+void draw() { //Draw
 move();
 stroke(0);
 rect(x, y, w, h); }
 
-void move() {
-if (moveCheckUp && y >= 0) {
+void move() { // Movement
+if (moveCheckUp && y > 0) { // Up Movement
 y -= (speed);
 }
-if (moveCheckDown && y <= height) {
+if (moveCheckDown && y < height - h) { // Down Movement
 y += (speed);
 }
-if (moveCheckLeft && x >= 0) {
+if (moveCheckLeft && x > 0) { // Left Movement
 x -= (speed);
 }
-if (moveCheckRight && x <= width) {
+if (moveCheckRight && x <= width - w) { // Right Movement
 x += (speed);
 }
 if (moveCheckUp && moveCheckLeft || moveCheckUp && moveCheckRight) {
@@ -58,7 +64,7 @@ speed = strSpeed;
 
 }
 
-void moveStart() {
+void moveStart() { // KeyPressed 
 if (key == upCap || key == upLow) {
 moveCheckUp = true;
 }
@@ -73,7 +79,7 @@ moveCheckRight = true;
 }
 }
 
-void moveStop() {
+void moveStop() { // KeyReleased
 if (key == upCap || key == upLow) {
 moveCheckUp = false;
 }
