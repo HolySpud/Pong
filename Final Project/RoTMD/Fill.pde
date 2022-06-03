@@ -1,4 +1,4 @@
 void finish() {
-box = new Player(60,60);
+box = new Player(width/2, height/2);
 shapes.add(box);
 }

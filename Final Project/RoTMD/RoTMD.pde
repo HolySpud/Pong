@@ -19,3 +19,7 @@ box.moveStart();
 void keyReleased() {
 box.moveStop();
 }
+
+void mousePressed() {
+box.attack();
+}
