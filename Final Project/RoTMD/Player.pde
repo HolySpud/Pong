@@ -1,5 +1,5 @@
 final class Player extends Shape {
-  float diagSpeed, strSpeed, speed, range, w, h;
+  float diagSpeed, strSpeed, speed, range, w, h, wBox, hBox, projW, projH; // Speed and Size
   char upCap, upLow, downCap, downLow, leftCap, leftLow, rightCap, rightLow; //Key Bind Variables
   Boolean moveCheckUp = false, moveCheckDown = false, moveCheckLeft = false, moveCheckRight = false; //Movement Variables
   //Player Sprites
@@ -17,9 +17,14 @@ final class Player extends Shape {
     strSpeed = speed; // Static Normal Speed
     diagSpeed = sqrt((speed*speed)/2); // Static Diagonal Speed
 
-    //Width, Height
+    //Width, Height (Player, Hitbox, Projectile)
     w = height/10;
     h = w;
+    
+    wBox = w * 1.1;
+    hBox = h * 1.1;
+    projW = 25;
+    projH = projW;
 
     //Up Bind
     upCap = 'W';
@@ -40,6 +45,7 @@ final class Player extends Shape {
 
   void draw() { //Draw
     move();
+    attack();
     stroke(0);
     //image(left1, x, y, w, h);
     rect(x, y, w, h);
@@ -101,10 +107,15 @@ final class Player extends Shape {
   }
 
   void attack() {
-    if (mouseY < y) {
-      rect(x + w/2 - 25/2, y - range, 25, 25);
-    }
-    if (mouseY > y) {
+    if (mousePressed && (mouseButton == LEFT)) {
+      if (mouseY < y) {
+        int m = millis();
+        if (m < 1000) {
+          rect(x + w/2 - projW/2, y - range, projW, projH);
+        }
+      }
+      if (mouseY > y) {
+      }
     }
   }
 }

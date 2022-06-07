@@ -1,5 +1,6 @@
 ArrayList<Shape> shapes = new ArrayList<Shape>();
 Player box;
+Enemy box1;
 void setup() {
   fullScreen();
   finish();
@@ -20,6 +21,5 @@ void keyReleased() {
   box.moveStop();
 }
 
-void mousePressed() {
-  box.attack();
+void mousePressed() { 
 }
