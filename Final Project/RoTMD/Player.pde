@@ -1,7 +1,5 @@
-final class Player extends Shape {
-  float diagSpeed, strSpeed, speed, range, w, h, wBox, hBox, projW, projH; // Speed and Size
+final class Player extends Entity {
   char upCap, upLow, downCap, downLow, leftCap, leftLow, rightCap, rightLow; //Key Bind Variables
-  Boolean moveCheckUp = false, moveCheckDown = false, moveCheckLeft = false, moveCheckRight = false; //Movement Variables
   //Player Sprites
   PImage left1, slash1; //, left2, front1, front2, front3, back1, back2, back3;
   //Constructor
@@ -20,7 +18,7 @@ final class Player extends Shape {
     //Width, Height (Player, Hitbox, Projectile)
     w = height/10;
     h = w;
-    
+
     wBox = w * 1.1;
     hBox = h * 1.1;
     projW = 25;
@@ -46,6 +44,7 @@ final class Player extends Shape {
   void draw() { //Draw
     move();
     attack();
+    collisionCheck();
     stroke(0);
     //image(left1, x, y, w, h);
     rect(x, y, w, h);
@@ -106,16 +105,17 @@ final class Player extends Shape {
     }
   }
 
+  void collisionCheck() {
+    for (int i = 1; i < shapes.size(); i++) {
+      Shape obj = shapes.get(i);
+      if (w < obj.w) {
+        y+=speed/2;
+      }
+    }
+  }
+
   void attack() {
     if (mousePressed && (mouseButton == LEFT)) {
-      if (mouseY < y) {
-        int m = millis();
-        if (m < 1000) {
-          rect(x + w/2 - projW/2, y - range, projW, projH);
-        }
-      }
-      if (mouseY > y) {
-      }
     }
   }
 }

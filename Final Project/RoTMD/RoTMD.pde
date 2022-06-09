@@ -21,5 +21,5 @@ void keyReleased() {
   box.moveStop();
 }
 
-void mousePressed() { 
+void mousePressed() {
 }
