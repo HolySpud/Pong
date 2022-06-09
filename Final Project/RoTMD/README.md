@@ -5,3 +5,5 @@
 - Hardmode
 - Classes
 - Stronger enemies as time passes
+- Collision
+- 
