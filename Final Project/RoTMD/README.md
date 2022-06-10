@@ -1,4 +1,5 @@
 - Bullet hell game, dodge barrage of projectiles coming at your character, return the favor by attacking using your mouse
+- Play the game by clicking on "START" after launching it
 - Full directional movement
 - Sprites
 - Items?

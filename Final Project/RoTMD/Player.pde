@@ -42,8 +42,8 @@ final class Player extends Entity {
   }
 
   void draw() { //Draw
+    //attack();
     move();
-    attack();
     collisionCheck();
     stroke(0);
     //image(left1, x, y, w, h);
@@ -108,14 +108,27 @@ final class Player extends Entity {
   void collisionCheck() {
     for (int i = 1; i < shapes.size(); i++) {
       Shape obj = shapes.get(i);
-      if (w < obj.w) {
-        y+=speed/2;
+      if (y < obj.y + obj.h ) {
+        if (x > obj.x && x < obj.w) { // Not working???
+            y+=speed;
+        }
+        if (w > obj.x && w < obj.w) { // Not working???
+            y+=speed;
+        }
       }
     }
   }
 
   void attack() {
     if (mousePressed && (mouseButton == LEFT)) {
+      attackAnim();
     }
   }
+  
+  void attackAnim() {
+  int m = millis();
+  if (m < 1000) {
+    rect (100, 100, 100, 100);
+  }
+}
 }

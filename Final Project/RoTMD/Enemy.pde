@@ -4,8 +4,8 @@ final class Enemy extends Entity {
     super(x, y);
 
     // Width Height
-    w = 10;
-    h = 10;
+    w = 100;
+    h = 100;
 
     // Hitbox
     wBox = w * 1.1;
