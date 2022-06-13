@@ -1,11 +1,11 @@
 final class Enemy extends Entity {
   PImage sprite1;
-  Enemy(float x, float y) {
+  Enemy(float x, float y, float w, float h) {
     super(x, y);
 
     // Width Height
-    w = 100;
-    h = 100;
+    this.w = w;
+    this.h = h;
 
     // Hitbox
     wBox = w * 1.1;

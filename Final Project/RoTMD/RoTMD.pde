@@ -1,6 +1,6 @@
 ArrayList<Shape> shapes = new ArrayList<Shape>();
 Player box;
-Enemy box1;
+Enemy box1, box2;
 void setup() {
   fullScreen();
   finish();

@@ -11,7 +11,7 @@ final class Player extends Entity {
 
     range = 50;
 
-    speed = 10; //Dynamic Speed
+    speed = 7; //Dynamic Speed
     strSpeed = speed; // Static Normal Speed
     diagSpeed = sqrt((speed*speed)/2); // Static Diagonal Speed
 
@@ -108,12 +108,50 @@ final class Player extends Entity {
   void collisionCheck() {
     for (int i = 1; i < shapes.size(); i++) {
       Shape obj = shapes.get(i);
-      if (y < obj.y + obj.h ) {
-        if (x > obj.x && x < obj.w) { // Not working???
+      // BOTTOM COLLISION
+      if (y < obj.y + obj.h && w < obj.w) {
+        if ((x > obj.x) && (x < obj.x+obj.w)) {
+          y+=speed;
+        } else
+          if ((x+w > obj.x) && (x+w < obj.x+obj.w)) {
             y+=speed;
-        }
-        if (w > obj.x && w < obj.w) { // Not working???
+          } else
+            if ((x > obj.x) && (x < obj.x+obj.w) && (x+w > obj.x) && (x+w < obj.x+obj.w)) {
+              y+=speed;
+            }
+      }
+      if (y < obj.y + obj.h && w > obj.w) {
+        if ((obj.x > x) && (obj.x < x+w)) {
+          y+=speed;
+        } else
+          if ((obj.x+obj.w > x) && (obj.x+obj.w < x+w)) {
             y+=speed;
+          } else
+            if ((obj.x > x) && (obj.x < x+w) && (obj.x+obj.w > x) && (obj.x+obj.w < x+w)) {
+              y+=speed;
+            }
+      }
+      // LEFT COLLISION
+      if (x < obj.x + obj.w && h < obj.h) {
+        if ((y > obj.y) && (y < obj.y+obj.h)) {
+          x+=speed;
+        } else
+          if ((y+h > obj.y) && (y+h < obj.y+obj.h)) {
+            x+=speed;
+          } else
+            if ((y > obj.y) && (y < obj.y+obj.h) && (y+h > obj.y) && (y+h < obj.y+obj.h)) {
+              x+=speed;
+            }
+        if (x < obj.x + obj.w && h > obj.h) { // Bottom Collision Big -> Small
+          if ((obj.y > y) && (obj.y < y+h)) {
+            x+=speed;
+          } else
+            if ((obj.y+obj.h > y) && (obj.y+obj.h < y+h)) {
+              x+=speed;
+            } else
+              if ((obj.y > y) && (obj.y < y+h) && (obj.y+obj.h > y) && (obj.y+obj.h < y+h)) {
+                x+=speed;
+              }
         }
       }
     }
@@ -124,11 +162,11 @@ final class Player extends Entity {
       attackAnim();
     }
   }
-  
+
   void attackAnim() {
-  int m = millis();
-  if (m < 1000) {
-    rect (100, 100, 100, 100);
+    int m = millis();
+    if (m < 1000) {
+      rect (100, 100, 100, 100);
+    }
   }
-}
 }
