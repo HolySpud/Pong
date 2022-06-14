@@ -5,6 +5,6 @@ void finish() {
   box1 = new Enemy(width/3, height/3, 100, 100);
   shapes.add(box1);
   
-  box2 = new Enemy(200, 200, 50, 50);
+  box2 = new Enemy(200, 200, 75, 75);
   shapes.add(box2);
 }

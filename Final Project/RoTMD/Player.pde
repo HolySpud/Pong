@@ -109,7 +109,7 @@ final class Player extends Entity {
     for (int i = 1; i < shapes.size(); i++) {
       Shape obj = shapes.get(i);
       // BOTTOM COLLISION
-      if (y < obj.y + obj.h && w < obj.w) {
+      if (y < obj.y + obj.h && y > obj.y + obj.h - obj.h/10 && w < obj.w) { // Small -> Big
         if ((x > obj.x) && (x < obj.x+obj.w)) {
           y+=speed;
         } else
@@ -120,7 +120,7 @@ final class Player extends Entity {
               y+=speed;
             }
       }
-      if (y < obj.y + obj.h && w > obj.w) {
+      if (y < obj.y + obj.h && y > obj.y + obj.h - obj.h/10 && w > obj.w) { // Big -> Small
         if ((obj.x > x) && (obj.x < x+w)) {
           y+=speed;
         } else
@@ -132,7 +132,7 @@ final class Player extends Entity {
             }
       }
       // LEFT COLLISION
-      if (x < obj.x + obj.w && h < obj.h) {
+      if (x < obj.x + obj.w && x > obj.x + obj.w - obj.w/10 && h < obj.h) { // Small -> Big
         if ((y > obj.y) && (y < obj.y+obj.h)) {
           x+=speed;
         } else
@@ -142,7 +142,8 @@ final class Player extends Entity {
             if ((y > obj.y) && (y < obj.y+obj.h) && (y+h > obj.y) && (y+h < obj.y+obj.h)) {
               x+=speed;
             }
-        if (x < obj.x + obj.w && h > obj.h) { // Bottom Collision Big -> Small
+      }
+      if (x < obj.x + obj.w && x > obj.x + obj.w - obj.w/10 && h > obj.h) { // Big -> Small
           if ((obj.y > y) && (obj.y < y+h)) {
             x+=speed;
           } else
@@ -153,7 +154,32 @@ final class Player extends Entity {
                 x+=speed;
               }
         }
+      // UP COLLISION
+      if (y + h > obj.y && y + h < obj.y + obj.h/10 && w < obj.w) { // Small -> Big
+      if ((x > obj.x) && (x < obj.x+obj.w)) {
+          y-=speed;
+        } else
+          if ((x+w > obj.x) && (x+w < obj.x+obj.w)) {
+            y-=speed;
+          } else
+            if ((x > obj.x) && (x < obj.x+obj.w) && (x+w > obj.x) && (x+w < obj.x+obj.w)) {
+              y-=speed;
+            }
       }
+      if (y + h > obj.y && y + h < obj.y + obj.h/10 && w > obj.w) { // Big -> Small
+       if ((obj.x > x) && (obj.x < x+w)) {
+          y-=speed;
+        } else
+          if ((obj.x+obj.w > x) && (obj.x+obj.w < x+w)) {
+            y-=speed;
+          } else
+            if ((obj.x > x) && (obj.x < x+w) && (obj.x+obj.w > x) && (obj.x+obj.w < x+w)) {
+              y-=speed;
+            }
+      }
+      
+      
+      
     }
   }
 
