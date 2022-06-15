@@ -1,4 +1,5 @@
 ArrayList<Shape> shapes = new ArrayList<Shape>();
+int m;
 Player box;
 Enemy box1, box2;
 void setup() {
@@ -7,6 +8,7 @@ void setup() {
 }
 
 void draw() {
+  m = millis();
   rect(0, 0, width, height);
   for (Shape s : shapes) {
     s.draw();
