@@ -205,13 +205,7 @@ final class Player extends Entity {
 
   void attack() {
     if (mousePressed && (mouseButton == LEFT)) {
-      attackAnim();
     }
   }
 
-  void attackAnim() {
-    if (millis() - m >= 1000) {
-      rect (100, 100, 100, 100);
-    }
-  }
 }
