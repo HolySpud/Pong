@@ -1,10 +1,10 @@
 - Bullet hell game, dodge barrage of projectiles coming at your character, return the favor by attacking using your mouse
 - Play the game by clicking on "START" after launching it
-- Full directional movement
-- Sprites
+- Full directional movement (With keyPressed and keyReleased)
+- Sprites 
 - Items?
 - Hardmode
-- Classes
-- Stronger enemies as time passes
-- Collision
+- Classes 
+- Stronger enemies as time passes (Using millis?)
+- Collision (Using array loops and abstract variables in classes)
 - 
